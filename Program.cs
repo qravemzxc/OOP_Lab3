@@ -140,6 +140,47 @@ namespace Lab3
             return obj1;
         }
     }
-
-    
+    static class StatisticOperation
+    {
+        public static int Sum(List obj1)
+        {
+            return List.list1.Sum();
+        }
+        public static int Dif(List obj1)
+        {
+            int max = 1000;
+            int min = 0;
+            for (int i = 0; i < List.list1.Count; i++)
+            {
+                if (List.list1[i] < max)
+                    max = List.list1[i];
+                if (List.list1[i] > min)
+                    min = List.list1[i];
+            }
+            int difference = max - min;
+            return difference;
+        }
+        public static int Amount(List obj1)
+        {
+            return List.list1.Count();
+        }
+        public static int CharCount(this string str, char c)
+        {
+            int counter = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == c)
+                    counter++;
+            }
+            return counter;
+        }
+        public static string Truncation(string text)
+        {
+            Console.Write("Укажите длину:");
+            string strlength = Console.ReadLine();
+            int strLength = Convert.ToInt32(strlength);
+            string newText = text.Substring(strLength);
+            return newText;
+        }
+    }
 }
