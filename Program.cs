@@ -93,8 +93,53 @@ namespace Lab3
         }
 
    
-        
-    
-    
+        public List this[int index]
+        {
+            get => objects[index];
+            set => objects[index] = value;
+        }
+
+        public static List operator !(List obj1)
+        {
+           int[]array=list1.ToArray();
+            return (List)array.Reverse();
+        }
+        public static List operator +(List obj1, List obj2)
+        {
+            return obj1 + obj2;
+        }
+        bool result = true;
+        public static bool operator ==(List obj1, List obj2)
+        {
+            if (List.list1== List.list2)
+                return false;
+            else
+                return true;
+        }
+        public static bool operator !=(List obj1, List obj2)
+        {
+            if (List.list1!= List.list2)
+                return true;
+            else
+                return false;
+        }
+        public static List operator >(List obj1,List obj2)
+        {
+            for(int i = 100; i < 130; i++)
+            {
+                List.list2.Add(list1[i]);
+            }
+            return obj2;
+        }
+        public static List operator <(List obj1, List obj2)
+        {
+            for (int i = 100; i < 130; i++)
+            {
+                List.list1.Add(list2[i]);
+            }
+            return obj1;
+        }
     }
+
+    
 }
